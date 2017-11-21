@@ -50,7 +50,7 @@ func main() {
 	teacher := flag.Bool("teacher",false,"是否生成教师的表")
 	flag.Parse()
 	options := map[string]bool{"student":*student,"teacher":*teacher}
-	db, err := sql.Open("mysql", "yy:wyysdsa!@tcp(219.221.176.204:3306)/aqzsjs?charset=utf8")
+	db, err := sql.Open("mysql", "username:password@tcp(localhost:3306)/aqzsjs?charset=utf8")
 	checkErr(err)
 	defer db.Close()
 	query, err := db.Query("SELECT * FROM aqzsjs.aq_member")
